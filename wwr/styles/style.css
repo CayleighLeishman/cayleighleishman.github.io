@@ -1,9 +1,14 @@
-/*This is a comment*/
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@300&family=Rock+Salt&display=swap');
 body{
     color: black;
     background-color: #396E94;
-}
+    font-family: 'IM Fell French Canon SC,Rock Salt', 'Lato';
+    font-size: 22px;
+    margin:0;
+    padding:0;
 
+}
 header {
     background-color:#A43312;
 }
@@ -12,6 +17,7 @@ nav a{
     text-align: center;
     color:#E7C24F;
     text-decoration:none;
+    padding: 35px;
     
 }
 nav a:hover{
@@ -20,6 +26,9 @@ nav a:hover{
 }
 .home-title{
     color: #A43312;
+    font-size: 2em;
+    font-family: 'Rock Salt', 'IM Fell French Canon SC','Lato';
+    margin-top:10px;
 }
 h4{
     color:#396E94;
@@ -33,43 +42,76 @@ h4{
 main section{
     text-align: center;
 }
-div{
-  max-width: 1600px;  
-}
+/*deleted the div and the code that was in it is now under "#Content*/
 #Content {
-    text-align: center;
+    text-align: center; /*changed this from "center" to "left" to make it look more like image 
+    from week 5 assingemnt on the bottom page*/
     margin: 0 auto;
-    border: 0 auto;
-    padding: 0;
+    max-width: 1600px;  
+    
 }
 .book, .join{
     background-color: #AABD8C;
     color:#A43312;
     text-decoration: none;
+    font-size: 18px;
+    font-family: 'Lato','Rock Salt', 'IM Fell French Canon SC';
+    padding: 15px 30px;
+    margin-top:50px;
+    border-radius: 5px;
     
+}
+.river-card, .camping-card, .rapids-card{
+    margin: 200px 0;
+}
+.card-img{
+    border: 10px solid #A43312;
+
+}
+main section img{
+    box-sizing: border-box;
+
 }
 .book:hover, join:hover{
     background-color:#396E94;
     color:#AABD8C;
 }
-ms h2{
-    color:#E7C24F;
+h2{
+    margin:0;
 }
-msg p{
+.msg h2{
     color:#396E94;
+}
+.msg p{
+    color:#396E94;
+    font-size: .8em;
+    font-family:'Lato','Rock Salt','IM Fell French Canon SC';
+    padding-bottom : 15px;
 }
 #background{
     height: 725px;
     background-color: #A43312;
+    color:#AABD8C
 }
-.msg{
+.msg {
     background-color: #aabd8c;
+    line-height: 1.5em;
+    padding:35px;
+    
 }
 footer{
     background-color:#A43312 ;
+    padding: 25px 50px;
+    margin-top:200px;
+
+}
+footer .social img{
+    padding-top:15px;
+
 }
 .icon{
     width: 80px;
+    padding-top:10px;
 }
 footer a{
     color: #aabd8c;
@@ -79,5 +121,13 @@ footer a:hover{
     color: #396E94;
 }
 footer h3{
-    text-decoration: underline;
+    text-decoration: none;
+}
+#logo-link{
+    padding-top:5px;
+    width: 80px;
+
+}
+.logo{
+    width: 80px;
 }
