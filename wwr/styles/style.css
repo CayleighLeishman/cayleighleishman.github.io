@@ -1,3 +1,6 @@
+/*Do the last part from step 4 of the wireframe assingment*/
+/*figure out why the pictures in the middle of the page went wide in browser but now when I change the size of browser*/
+/*I think its enlarging becuase you have a code telling it to fill the size of the grid, but didn't implement a grid for that section*/
 
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@300&family=Rock+Salt&display=swap');
 body{
@@ -10,7 +13,13 @@ body{
 
 }
 header {
+    display: grid;
+    grid-template-columns: 150px auto;
     background-color:#A43312;
+}
+nav{
+    display:flex;
+    justify-content:Space-around;
 }
 nav a{
     
@@ -36,11 +45,36 @@ h4{
 #hero-msg h1, hero-msg h4{
     text-align: center;
 }
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin-top: 100px; 
+}
+#hero-box{
+    grid-column:1/4;
+    grid-row: 1/3;
+    z-index:-1;
+    
+}
+#hero-msg {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 100px;
+}
+#hero-msg h4 {
+    color: white;
+}
+.home-grid{ /* read https://byui-wdd.github.io/wdd130/activities/w07-final-touches.html number 4 to see why I put this in css  */
+    display:grid;
+    grid-template-columns: repeat(10,1fr);
+}
 .button-box{
     text-align: center;
 }
 main section{
     text-align: center;
+    display:grid;
+    /*grid-template-columns: 10;--this might have been meant for a differnt part but i was unsure*/
 }
 /*deleted the div and the code that was in it is now under "#Content*/
 #Content {
@@ -61,12 +95,52 @@ main section{
     border-radius: 5px;
     
 }
-.river-card, .camping-card, .rapids-card{
+.rivers-card, .camping-card, .rapids-card{
     margin: 200px 0;
 }
-.card-img{
-    border: 10px solid #A43312;
+.rivers-card{
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+.camping-card{
+    grid-column: 5/7;
+    grid-row:2/3;
+}
+.rapids-card{
+    grid-column: 8/10;
+    grid-row: 2/3;
+}
+#background{
+    grid-column: 1/11;
+    grid-row: 4/9;
+}
+.mountains{
+    grid-column:2/7;
+    grid-row:  5/8;
+}
+.mountains{
+    grid-column: 2/7;
+    grid-row:5/8 ;
 
+}
+.msg{
+    grid-column:6/10 ;
+    grid-row: 6/7;
+}
+.card-img{
+    width:100%;
+    border: 10px solid #A43312;
+    transition: .5s;
+    box-shadow: 5px 5px 10px #A43312;
+
+}
+.card-img:hover {
+    opacity: .6;
+    transform: scale(1.1);
+}
+.card-img, .mountains{
+    width:100%;
+    
 }
 main section img{
     box-sizing: border-box;
@@ -79,6 +153,14 @@ main section img{
 h2{
     margin:0;
 }
+.msg {
+    background-color: #aabd8c;
+    line-height: 1.5em;
+    padding:35px;
+    grid-column: 7/10;
+    grid-row:6/7 ;
+    box-shadow: 5px 5px 10px #Aabd8c;
+}
 .msg h2{
     color:#396E94;
 }
@@ -88,21 +170,25 @@ h2{
     font-family:'Lato','Rock Salt','IM Fell French Canon SC';
     padding-bottom : 15px;
 }
+.mountains{
+    width: 100%;
+    grid-column: 2/7;
+    grid-row: 5/8;
+    box-shadow: 5px 5px 10px #AABD8C;
+}
 #background{
     height: 725px;
     background-color: #A43312;
     color:#AABD8C
 }
-.msg {
-    background-color: #aabd8c;
-    line-height: 1.5em;
-    padding:35px;
-    
-}
+
 footer{
     background-color:#A43312 ;
     padding: 25px 50px;
     margin-top:200px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
 
 }
 footer .social img{
@@ -125,9 +211,72 @@ footer h3{
 }
 #logo-link{
     padding-top:5px;
+    justify-self: center;
+    align-self: center;
     width: 80px;
 
 }
 .logo{
     width: 80px;
+}
+
+
+@media screen and (max-width: 900px) {
+    #hero, .home-grid {
+        display: block;
+        height: auto;
+    }
+    nav, footer {
+        flex-direction: column;
+    }
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+    #hero {
+        margin-top: 0;
+    }
+    #hero-msg {
+        margin-top: 0;
+    }
+    #hero-msg h4 {
+        display: none;
+    }
+    .home-title {
+        font-size: 25px;
+        color: #6f7364;
+    }
+    .rivers-card, .camping-card, .rapids-card { 
+        margin: 30px auto;
+        width: 60%;
+    }
+    /* I figured that I was supposed to put this below in but that didn't help in any way. I cannot for the
+    life of me understand what this section of the instructions is asking for and why it's not fixing the 
+    issue of the pictures filling the whole screen*/
+    .rivers-card{
+        grid-column: 2/4;
+        grid-row:2/3;
+
+    }
+    .camping-card{
+        grid-column:5/7;
+        grid-row:2/3;
+    }
+    .rapids-card{
+        grid-column: 8/10;
+        grid-row: 2/3 ;
+    }
+    #background {
+        display: none;
+        grid-column: 1/11;
+        grid-row: 4/9;
+    }
+    .mountains, .msg {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    footer {
+        margin-top: 25px;
+    }
 }
