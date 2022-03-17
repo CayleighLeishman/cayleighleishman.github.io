@@ -31,14 +31,18 @@ for another assingment*/
 }
 
 
-/*  Look around below...but DON'T CHANGE ANYTHING! */
 
 body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4em;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
+}
+
+nav{
+  /*might not need this but I was trying to center the Nav and thought this was the way to do it*/
+  display: center;
 }
 img {
   display: block;
