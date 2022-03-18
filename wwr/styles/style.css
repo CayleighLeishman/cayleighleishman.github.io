@@ -48,7 +48,7 @@ h4{
 #hero {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    margin-top: 100px; 
+    margin; 0: 
 }
 #hero-box{
     grid-column:1/4;
@@ -216,7 +216,7 @@ footer h3{
 #logo-link{
     padding-top:100px;
     justify-self: center;
-    align-self: center;
+    align-self: left;
     width: 80px;
 
 }

@@ -5,7 +5,7 @@ Fonts are separated by a | */
 for another assingment*/
 
 /*copied and pasted from week 3 assingment*/
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=IM+Fell+French+Canon+SC&family=Lato:wght@300&family=Merriweather&family=Noto+Serif&family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=IM+Fell+French+Canon+SC&family=Lato:wght@300&family=Merriweather&family=Noto+Serif&family=PT+Serif&family=Roboto&display=swap');
 
 :root {
   /* change the values below to your colors from your palette */
@@ -31,19 +31,42 @@ for another assingment*/
 }
 
 
+body{
+  color: black;
+  background-color: #ffff;
+  font-family: EB Garamond, IM Fell French Canon;
+  font-size: 22px;
+  margin:0;
+  padding:0;
 
-body {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4em;
-  font-size: 20px;
+}
+nav{
+  display: flex;
+  justify-content: space-around;
+}
+.logo{
+  width: 500px;
+}
+#logo_link{
+  padding-top: 10px;
+  justify-self: center;
+  align-self: left;
+  width:8000px
+
+}
+footer{
+  background-color: #39D0D0 ;
+  padding: 25px 50px;
+  margin-top:200px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#intro{
   text-align: center;
 }
 
-nav{
-  /*might not need this but I was trying to center the Nav and thought this was the way to do it*/
-  display: center;
-}
 img {
   display: block;
   margin: 0 auto;
@@ -65,9 +88,6 @@ header {
   text-align: center;
   color: var(--paragraph-color-on-color);
   background-color: var(--paragraph-background-color);
-}
-header > h1, header > h2 {
-  color: var(--headline-color-on-color);
 }
 
 p {
@@ -109,9 +129,13 @@ p.colored {
 
 nav {
   background-color: var(--nav-background-color);
-  line-height: 3em;
+  line-height: 2em;
   text-align: center;
   font-size: 1.2em;
+  /*This code makes the outline of the words ("contact Darci" turn black with insides white
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black; 
+  */
 }
 nav  {
   list-style-type: none;
@@ -131,6 +155,14 @@ nav a:link, nav a:visited {
 nav a:hover {
   color: var(--nav-hover-link-color);
   background-color: var(--nav-hover-background-color);
+}
+#Content {
+  text-align: right; 
+  margin: 0 auto;
+  max-width: 1600px;
+  margin-top: 20px;
+  font-family: ;
+  
 }
 
 .sitemap {
@@ -180,4 +212,4 @@ nav a:hover {
   grid-area: right;
   border-top: 1px solid;
   border-right: 1px solid;
-}
+} 
