@@ -55,12 +55,14 @@ nav{
   width:8000px
 
 }
+/*in index.html*/
 .meeting{
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   margin: 0%;
 }
+
 footer{
   
   background-color: #39D0D0 ;
@@ -92,6 +94,7 @@ hr {
   background: var(--accent1-color);
 }
 header {
+  margin-top: 75px;
   padding: 1em;
   text-align: center;
   color: var(--paragraph-color-on-color);
@@ -256,4 +259,8 @@ nav a:hover {
   height: 8px;
   background: #04AA6D;
   width: 0%;
+}
+
+h2{
+  margin: 15px;
 }
