@@ -221,3 +221,14 @@ nav a:hover {
   border-top: 1px solid;
   border-right: 1px solid;
 } 
+/*linked with patterns.html, however I may not use it and just let it be centered
+.home-grid{
+  display:grid;
+  grid-template-columns: repeat(10,1fr);
+}
+.heart-img{
+  size: 288px, 488px;
+}
+.zag-img{
+
+*/
