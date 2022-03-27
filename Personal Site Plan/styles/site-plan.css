@@ -54,7 +54,7 @@ for another assingment*/
 body{
   color: black;
   background-color: #ffff;
-  font-family: EB Garamond, IM Fell French Canon;
+  font-family: 'EB Garamond', 'IM Fell French Canon','sans-serif';
   font-size: 22px;
   margin:0;
   padding:0;

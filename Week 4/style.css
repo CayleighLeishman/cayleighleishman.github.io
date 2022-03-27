@@ -1,0 +1,25 @@
+body{
+    background: rgb(235, 139, 175);
+    text-align:center;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 3fr;
+    margin: 0% auto;
+}
+
+/*help from https://www.codegrepper.com/code-examples/html/how+to+center+an+ordered+list+in+html*/
+ol {
+    display: table;
+    margin: 0 auto;
+    text-align:left;
+    font-weight:bold;
+    font-size: large;
+
+}
+img {
+    width:190px;
+    margin: 0 auto;
+}
+.second{
+    font-weight: bold;
+}

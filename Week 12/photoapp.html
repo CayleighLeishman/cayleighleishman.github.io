@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/photoapp.css">
+    
+    <title>Photo App</title>
+    <script src="https://kit.fontawesome.com/f28dc36529.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=IM+Fell+French+Canon+SC&family=Lato:wght@300&family=Merriweather&family=Noto+Serif&family=PT+Serif&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <section class="photocard">
+        <header>
+            <img src="images/profile-sample.jpg" alt="Alexa John">
+            <p class="user">AlexaJohn</p>
+            <p class="time">28 mins</p>
+            <a class="menu" href="#"><i class="fa-solid fa-ellipsis-vertical"></i> </a>
+
+        </header>
+
+        <img src="images/scene.jpg" alt="sunrise">
+
+        <footer>
+            <!-- NOTE: the fonts codes only work if its solid, I tried getting the light version but no matter what style link I tried, it would not work.-->
+            <!--i cannot for the life of me figure out why my fonts are not working unless it uses solid. i tried a free link ("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css") and it did the same thing, 
+            i tried the kit by creating an account (which is "<script src="https://kit.fontawesome.com/f28dc36529.js" crossorigin="anonymous"></script>") and that didn't work at giving me the specific font I was supposed to use-->
+            <a href="#"><i class="fa-solid fa-bookmark"></i></a>
+            <a href="#"><i class="fa-solid fa-share-nodes"></i></a> <!--does not work unless it's "fa-solid"--> <!--they didn't have the share node from video so I picked this one-->
+            <a href="#"><i class="fa-solid fa-message"></i>125</a><!--does not work unless it's "fa-solid"-->
+            <a class="love" href="#">852<i class="fa-solid fa-heart"></i></a><!--does not work unless it's "fa-solid"-->
+        </footer>
+
+    </section><!--the validator gave a warning and said to use DIV instead of sections if I'm not using headers. However, I wanted to keep it as similar to the video as possible since I didn't see anywhere that said to use a validator-->
+</body>
+</html>

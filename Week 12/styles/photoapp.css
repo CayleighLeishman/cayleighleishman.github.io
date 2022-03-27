@@ -1,0 +1,66 @@
+body{
+    background-color: #efefef;
+    font-family: 'Roboto', "sans-serif";
+}
+
+.photocard{
+    max-width:510px;
+    color:#64656f;
+    margin:0 auto;
+    background-color: #ffffff;
+}
+.photocard header{
+    display:grid;
+    padding: 0 15px;
+    gap:10px;
+    grid-template-columns: 1fr 8fr 4fr 1fr;
+    align-items: center;
+}
+
+.photocard header img{
+    width:35px;
+    border-radius: 100%;
+    padding: 10px 0;
+}
+.photocard .user {
+    font-weight:bold;
+}
+.photocard .time{
+    color: #e4e3e7;
+    text-align: right;
+    font-size: 0.85em;
+
+}
+
+.photocard .menu{
+    text-align: right;
+}
+.photocard a:link,.photocard a:visited, .photocard a:hover, .photocard a:active {
+    color: #bfbfbf;
+    text-decoration:none;
+}
+.photocard a:hover{
+    color: #64656f;
+}
+
+.photocard img{
+    width:100%;
+}
+
+.photocard footer {
+    display:grid;
+    grid-template-columns: 1fr 1fr 4fr 5fr;
+    grid-template-rows:40px;
+    justify-items:left;
+    align-items:center;
+    padding:0 15px;
+   
+}
+.photocard footer .love{
+    justify-self:right;
+    font-weight: bold;
+}
+.photocard footer i{
+    font-size:0.85em;
+}
+
