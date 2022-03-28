@@ -1,0 +1,32 @@
+body {
+    /* this word "body" is taken from html file  */
+    background-color: purple;
+    
+}
+main{
+    display:grid;
+    grid-template-columns: 1fr 2fr 2fr;
+}
+.cute {
+    /* this word came from under "main" and is from the class "cute" */
+    background-color: pink;
+}
+.Destruction {
+    /* this word came from under "main" and is from the class "Destruction" */
+    background-color: red;
+    grid-row:2;
+    grid-column:2;
+}
+.Destruction div {
+    /*this is from main/Destruction/div class in the grid-sample.html file */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.care {
+    /* this word came from under "main" and is from the class "care" */
+    background-color: blue;
+    grid-column:2/4;
+}
+
+/* if there is a shalsh we go beteween numbers */

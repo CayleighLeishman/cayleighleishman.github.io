@@ -1,0 +1,22 @@
+
+ /*This is code I got from Sam Manwaring*/
+body {
+    background-color:purple;
+    align-items: center;
+}
+#hero-img{
+    width: 100%;
+}
+main {
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    column-gap: 25px;
+    padding: 50px;
+}
+#desk-img, #graphic-img, #person-img {
+    border-radius: 50%;
+    border-image-width: 20%;
+    border-color: black;
+    width: 100%;
+    padding: 50px;
+}
