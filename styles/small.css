@@ -1,33 +1,109 @@
-/* media (when screen size is small/tiny phone or watch */
-/* add response for text to always stay within the box width.  */
+/* Media: when screen size is small (tiny phone or watch) */
+/* Ensures text stays within the box width */
 
-@media screen and (max-width: 400px) {
-    /* make it so that the colors go to "base" so that we can just use var(--white) or whateve colros we need withot copying and pasting */
-    body{
-        font-size: 10px;
-        padding:5px;
-        text-align: center;
-        background-color: #150b0b;
-    }
-    div{
-        display: flex;
-        flex-direction: column;
-    }
+@media screen and (max-width: 700px) {
+  /* Reset base styles to rely on CSS variables for colors */
+  body {
+    font-size: 10px;
+    padding: 5px;
+    text-align: center;
+    background-color: var(--background-color);
+  }
+ header {
+  flex-direction: column;
+  padding: 1em;
+  gap: 0.5em;
+}
 
-      /* Links */
-    footer a {
-    color: black;
+.header-left {
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+nav {
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+
+
+
+  /*_____________________[Hamburger/Mobile Navigation button]__________________ */
+#hamburger-button{
+    background-color:var(--cinderella);
+    padding:.5rem;
+}
+#hamburger-button::before{ 
+    content: "☰";   
+}
+/*_____________________[nav when it's closed]____________________ */
+#hamburger-button.open::before{
+    content: 'x';
+}
+
+/* ____________________[nav when its opens]_______________________*/
+nav ul.open{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+
+}
+nav ul.open li{
+    /* border-style:double; */
+    border: double .1rem var(--mulan);
+}
+
+
+  div {
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Makes it so you can't see the "Sparkle effect" button  if the screen size is small */
-   /* Hide the sparkle toggle and any related visual */
-   .switch-container,
-   .slider,
-   #sparkleToggle {
-     display: none ;
-   }
- 
-   .special-button {
-     display: none ;
-   }
+   /* Hide sparkle toggle and any related visual when screen is small */
+ .switch-container,
+ .slider,
+ #sparkleToggle,
+ .special-button,label[for="sparkleToggle"]  {
+     display: none;
  }
+
+
+  img{
+    width: fit-content;
+  }
+
+  /* ==================== */
+  /* About-cayleigh-html  */
+  /* ==================== */
+  
+  /* To do: On click, generate sparkles if sparkles are set "on" (JS handles this) */
+}
+@media screen and (max-width: 500px) {
+   body {
+    background: var(--background-color);
+  }
+  
+  
+  .image-flip {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .skills{
+    width:auto;
+  }
+  /*to do add counselor  */
+
+  .image-text-pair,
+  .image-text-pair.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-text-pair img {
+    width: 100%;
+    max-width: 300px;
+  }
+}

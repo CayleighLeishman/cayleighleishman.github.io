@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Personal project showcasing ideas and creations" />
+    <meta name="author" content="Cayleigh Marie" />
+    <meta name="keywords" content="Cayleigh Marie, personal projects, web development, coding, tutorials" />
+
+    <title>Contact Cayleigh Leishman</title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/small.css" />
+
+    <!-- JavaScript -->
+    <script src="scripts/sparkleCursor.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" />
+
+    
+</head>
+<body>
+    <!-- https://www.youtube.com/watch?v=r4RQ38EoLds -->
+    <header>
+      
+      
+        <img src="../images/profile.svg" alt="Cayleigh Leishman Profile Picture" />
+        <h1>Cayleigh Leishman</h1>
+
+        
+          <nav>
+            <a href="../cayleighl.html" aria-label="Home">Home</a>
+            <a href="../fun/scavengerhunt.html"aria-label="Navigate to Scavenger Hunt">Scavenger Hunt</a>
+            <a href="siteplan.html" aria-label="Navigate to Site Plan">Site Plan</a>
+            <a class="active" href="contact.html" aria-label="Navigate to Contact">Contact</a>
+        </nav>  
+        <button title="navigation" id="hamburger-button"></button>
+
+        <div class="dark-mode-toggle">
+  <label for="darkModeSwitch">🌙 Dark Mode</label>
+  <input type="checkbox" id="darkModeSwitch" />
+</div>
+    </header>
+
+    <main> 
+           <div class="switch-container">
+            <label for="sparkleToggle" id="toggle-label">✨ Enable Sparkles</label>
+            <input type="checkbox" id="sparkleToggle" class="switch" checked>
+            <span class="slider"></span>
+        </div>
+
+        <form action="https://formsubmit.co/cayleigh.leishman@gmail.com" method="POST">
+             <input type="text" name="name" required>
+             <input type="email" name="email" required>
+             <button type="submit">Send</button>
+        </form>
+ 
+    </main>
+
+    <!-- these next few allow my page to have the animatin of the fish bow! Got from lottiefiles -->
+        <script
+          src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js"
+          type="module"
+        ></script>
+
+        <dotlottie-wc
+          src="https://lottie.host/ebb22708-ce3d-44e0-92cd-67c754845e39/0v4i9T6bAE.lottie"
+          autoplay
+          loop aria-label="fish jumping out of a fishbowl animation"
+          lazyloading>
+        </dotlottie-wc>
+    <footer>
+        <p>&copy; 2025 Cayleigh Leishman. All rights reserved.</p>
+        <p>
+            Follow me on:
+            <a href="https://www.linkedin.com/in/cayleigh-leishman" target="_blank" rel="noopener noreferrer">LinkedIn</a> or
+            <a href="https://github.com/CayleighLeishman" target="_blank" rel="noopener noreferrer">GitHub</a>.
+            
+        </p>      
+        
+    </footer>
+    
+</body>
+</html>

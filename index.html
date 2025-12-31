@@ -7,7 +7,8 @@
 
     <!-- Link to the CSS stylesheets -->
     <link rel="stylesheet" href="styles/base.css"> 
-    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/small.css">    
+    <!-- <link rel="stylesheet" href="/styles/bubble-effect.css"> -->
 
     <!-- Link to the JavaScript file that makes the sparkle effect work -->
     <script src="scripts/sparkleCursor.js" defer></script>
@@ -17,19 +18,31 @@
 </head>
 
 <body>
+    <div id="background-wrap">
+    <div class="bubble x1"></div>
+    <div class="bubble x2"></div>
+    <div class="bubble x3"></div>
+    <div class="bubble x4"></div>
+    <div class="bubble x5"></div>
+    <div class="bubble x6"></div>
+    <div class="bubble x7"></div>
+    <div class="bubble x8"></div>
+    <div class="bubble x9"></div>
+    <div class="bubble x10"></div>
 
     <header>
         <!-- This is your profile picture, an SVG image -->
         <img src="images/profile.svg" alt="Cayleigh Leishman Profile Picture">
         <h1>Welcome to My Project</h1>
+
+                <!-- Navigation links for 'About' and 'Contact' sections -->
+      <nav>
+        <a href="about-cayleigh.html" aria-label="About Cayleigh">About Me</a>
+        <a href="#contact" aria-label="Contact section">Contact</a>
+      </nav>
     </header>
 
-        <!-- Navigation links for 'About' and 'Contact' sections -->
-        <nav>
-            <a href="about-cayleigh.html" aria-label="About Navigation">About Me</a>
-            <a href="#" aria-label="Contact section">Contact</a>
-        </nav>
-    
+
 
     <!-- Main section of the page -->
     <main class="home-main">
@@ -40,7 +53,6 @@
             <span class="slider"></span>
         </div>
 
-     
         <!-- This is where the sparkles will show up -->
         <div id="sparkles-container"></div>
 
@@ -59,9 +71,16 @@
             <!-- Pocatello Chamber Project - 2022 -->
              <h3>2022</h3>
             <figure class="project-screenshot">
-        
-              <img src="images/pocatello-Chamber.png " alt="Screenshot of home page of Pocatello Chamber website" class="project-image">
+              
+              <div class ="image-link">
+                <a href="https://cayleighleishman.github.io/CodeToCraft-/chamber/index.html">
+                  <img src="images/pocatello-Chamber.png" alt="Screenshot of home page of Pocatello Chamber website" class="project-image">
+                </a>
+             </div>
+             
+
               <figcaption>Pocatello Chamber</figcaption>
+              <a href="https://cayleighleishman.github.io/CodeToCraft-/chamber/index.html">POCATELLO CHAMBER -practice with responsive Design</a>
               <p>
                 This project helped me strengthen my understanding of JavaScript—especially the dark mode/light mode toggle feature. 
                 It was one of the most exciting things I learned that semester and really got me more into JavaScript.
@@ -73,7 +92,7 @@
             <figure class="project-screenshot">
               <img src="images/portfolio.png" alt="Screenshot of home page of Enchanted Backpacks website" class="project-image">
               <figcaption>Enchanted Backpacks</figcaption>
-              <a href="https://cayleighleishman.github.io/CodeToCraft-/chamber/index.html>">POCATELLO CHAMBER -practice with responsive Design</a>"
+      
               <p>
                 This project made me realize I still had a lot to learn. While I appreciated the chance to create a more colorful page, 
                 I definitely humbled myself as I worked through properly implementing CSS and JavaScript.
@@ -85,6 +104,7 @@
             <figure class="project-screenshot">
               <img src="images/penguinMathApp.png" alt="Screenshot of home page of Math Flashcard App" class="project-image">
               <figcaption>Math Flashcard App</figcaption>
+              <a href="#">Link Does Not Exist yet! Thank you for your patience</a>
               <p>
                 This was a group project I worked on with classmates. We created a math flashcard app to help students practice math skills. 
                 It was my first time using Svelte in a big project, and I learned a lot about components. I also learned the importance of 
@@ -95,17 +115,28 @@
             <!-- CheckThisOut Library Site - API Practice -->
             <h3>2025</h3>
             <figure class="project-screenshot">
-              <img src="images/checkThisOut.png" alt="Screenshot of home page of CheckThisOut Library website" class="project-image">
+              <img src="images/checkThisOut.png" alt="Screenshot of the home page for my CheckThisOut Library Site" class="project-image">
               <figcaption>Check This Out Library</figcaption>
+              <a href="#">Link Does Not Exist yet! Thank you for your patience</a>
+
               <p>
                 This was my first time working with an API, and I was so excited to finally understand how they work. 
                 I successfully connected the API and gained a clearer understanding of how MVC works and what APIs actually do.
               </p>
             </figure>
+
+            <figure class="project-screenshot">
+              <img src="images/iriduim.png" alt="Screenshot of M-type Asteroid Sampling Simulator Project" class="project-image"
+              <figcaption>M-type Asteroid Sampling Simulator</figcaption>
+
+             <figcaption>
+              <a href="https://psyche.ssl.berkeley.edu/get-involved/capstone-projects/capstone-projects-iridium-class/m-type-asteroid-sampling-simulator-byu-f/">M-Type Asteroid Sampling Simulator</a>
+              <p>This website presents a series of screen images from our interactive simulation of a spacecraft landing on an asteroid. Designed to highlight the technical features and visual accuracy, it offers a clear view of the project’s development and user experience.</p>
+             </figcaption>
+            </figure>
         
           </section>
   
-
         <!-- 'Contact' section -->
         <section id="contact">
             <h2>Contact Me</h2>
@@ -115,7 +146,7 @@
 
     <!-- Footer section -->
     <footer>
-        <p>&copy; 2025 CayleighMarie. All rights reserved.<a href="private-policy.html">Privacy Policy</a></p>
+        <p>&copy; 2025 CayleighMarie. All rights reserved. <a href="private-policy.html">Privacy Policy</a></p>
     </footer>
 </body>
 </html>

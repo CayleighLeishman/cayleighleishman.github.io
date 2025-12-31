@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <meta name="description" content="Personal project showcasing ideas and creations" />
+    <meta name="author" content="Cayleigh Marie" />
+    <meta name="keywords" content="Cayleigh Marie, personal projects, web development, coding, tutorials" />
+
+    <title>About Cayleigh Leishman</title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="styles/base.css"  />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/chatbox.css"  />
+    <link rel="stylesheet" href="../styles/bubble-effect.css">
+
+
+    <!-- JavaScript -->
+    <script src="scripts/sparkleCursor.js" defer></script>
+    <script src="scripts/hamburger.js" defer></script>
+    <script src="scripts/chat.js" defer></script>
+    <!-- <script src="scripts/darkMode.js" defer></script> -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon/favicon.ico" />
+
+
+</head>
+<body>
+    <header>
+      
+      
+        <img src="images/profile.svg" alt="Cayleigh Leishman Profile Picture" />
+        <h1>Cayleigh Leishman</h1>
+
+        <!-- navigation here: -->       
+         <nav>
+              
+                <a class="active" href="cayleighl.html" aria-label="Home">Home</a>
+                <a href="fun/scavengerhunt.html" aria-label="Navigate to Scavenger Hunt">Scavenger Hunt</a>
+                <!-- <li><a href="fun/journalentries/intro.html" aria-label="Navigate to Blog posts">Blog entries</a></li> -->
+                <a href="business/siteplan.html" aria-label="Navigate to Site Plan">Site Plan</a>
+                <a href="business/contact.html" aria-label="Navigate to Contact">Contact</a>
+            
+            </nav>
+      
+
+        <button title="navigation" id="hamburger-button"></button>
+
+        <div class="dark-mode-toggle">
+            <label for="darkModeSwitch">🌙 Dark Mode</label>
+            <input type="checkbox" id="darkModeSwitch" />
+        </div>
+    </header>
+
+        
+    <main>
+   <!-- Button to toggle sparkle effect (on/off) -->
+        <div class="switch-container">
+            <label for="sparkleToggle" id="toggle-label">✨ Enable Sparkles</label>
+            <input type="checkbox" id="sparkleToggle" class="switch" checked>
+            <span class="slider"></span>
+        </div>
+        <!-- <section class="container"> -->
+        <h2>What I Do</h2>
+        <section class="cards">
+          
+            <p>
+                I’m studying Software Engineering with a focus on web development. I’m especially curious about UI research—how
+                people use websites and how to make them better for everyone.
+            </p>
+        
+        
+        <section class="image-flip">
+          <img src="images/profile.svg" alt="Cayleigh smiling for a picture" class="front" />
+          <img src="images/profile-hover.jpg" alt="cayleigh Dancing" class="back" />
+        </section>
+
+        </section>
+        <!-- class="cards" for the "What I do" Section" -->
+
+        <h2>Skills</h2>
+        <section class="skills">
+            
+            <section class="skillset">
+                <img src="images/icons8-html-100.png" alt="pink logo for HTML" loading="lazy">
+                <p>HTML</p>
+            </section>
+
+            <section class="skillset">
+               <p><img src="images/icons8-css-96.png" alt="pink logo for CSS" loading="lazy"> CSS</p>
+            </section>   
+            <section class="skillset">
+                   <p><img src="images/icons8-javascript-128.png" alt="pink logo for Javascript" loading="lazy">Javascript</p>
+               </section>   
+               <section class="skillset">
+                   <p><img src="images/icons8-json-80.png" alt="Pink Logo for Json" loading="lazy">JSON</p>
+        </section>   
+
+        <section class="skillset">
+            <p><img src="images/icons8-react-96.png" alt="pink logo for React" loading="lazy">REACT</p>
+        </section> 
+
+        <section class="skillset">
+                        <p><img src="images/icons8-svelte-128.png" alt="pink logo for Svelte" loading="lazy">Svelte</p>
+
+        </section>
+        <section class="skillset">
+            <p><img src="images/icons8-c-sharp-logo-100.png" alt="pink logo for CSharp." loading="lazy">C#</p>
+
+        </section>
+
+        <section class="skillset">
+            <p><img src="images/icons8-accessibility-100.png" alt="pink button for accessibility" loading="lazy"> Accessibility driven</p>
+
+        </section>
+        <section class="skillset">
+            <p><img src="images/icons8-mysql-80.png" alt="Pink button for MySQL" loading="lazy">MySQL</p>
+
+        </section> 
+        </section>  <!-- class= skills --> 
+
+        <h2>Where I’m From:</h2>
+        <p>
+            With roots in Idaho and Alberta, I now work remotely from the Mountain Time Zone—where the mountains are high and the Wi-Fi (usually) works.
+        </p>
+
+        <section class="image-flip">
+          <img src="images/location/pocatello-temple.webp" alt="Idaho Pocatello Temple" class="front" />
+          <img src="images/location/ab-temple.png" alt="Alberta Lethbridge Temple" class="back" />
+        </section>
+      
+
+        <section class="cards">
+        <h2>Just For Fun</h2>
+            <ul>
+                <li>Building a closet site that mixes and matches outfits automatically</li>
+                <li>Passionate about crafts, vibrant colors, and brain-teasing puzzles</li>
+            </ul>
+        </section>
+
+    </section>
+    </main>
+
+    <!-- this is what makes the "choose my adventure"  work -->
+       <div class="chat-popup" id="myForm">
+     <form action="/action_page.php" class="form-container">
+       <h1>Chat</h1>
+           <label for="msg"><b>Message</b></label>
+       <textarea placeholder="Type message.." name="msg" required></textarea>
+           <button type="submit" class="btn">Send</button>
+       <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+     </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Cayleigh Leishman. All rights reserved.</p>
+        <p>
+            Follow me on:
+            <a href="https://www.linkedin.com/in/cayleigh-leishman" target="_blank" rel="noopener noreferrer">LinkedIn</a> or
+            <a href="https://github.com/CayleighLeishman" target="_blank" rel="noopener noreferrer">GitHub</a>.
+            
+        </p>
+    </footer>
+</body>
+</html>

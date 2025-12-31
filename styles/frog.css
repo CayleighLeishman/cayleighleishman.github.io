@@ -1,0 +1,493 @@
+:root{
+  /* //These are all insantiated values that
+   get adjusted via JS for animation. They'll get blown up 
+   once a user moves the cursor. */
+
+  --scale-x: 1;
+  --scale-y: 1;
+  --pos-x: .5;
+  --pos-y: .5;
+  --pos-x-from-center: 0;
+  --pos-y-from-center: 0;
+  --body-rotation: calc( var(--pos-x-from-center) * 5deg) ;   
+
+  /* //Play with these all you want.  */
+
+  --color-bg: #e6ead2;
+  --color-skin-light: #cae256;
+  --color-skin-medium: #8fd747;
+  --color-skin-dark: #00929a;
+  --color-skin-belly: #ffffff;
+  --color-dark: #002522;
+  --color-light: #ffffff;
+  --color-feet: #fdb83a;
+  --color-eyeball: #eb5530;
+  --color-shadow: rgba(0,0,100,.075);  
+}
+
+
+/* original comment from coder: //In an effort to reduce elements and be resourceful with pseudo elements, 
+the code organization got away from me. Try to decipher at your own risk. */
+
+*{
+  box-sizing:border-box;
+}
+
+
+.container{
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  height:45vh;
+  background:#f0f2e3;
+}
+
+.frog{
+  width:50vw;
+  min-width:300px;
+  position:absolute;
+  left:50%;
+  bottom:100%;
+  transform: translateX(-50%);
+  z-index:1;
+
+  /* //aspect ratio hack */
+  &:before{
+    content:'';
+    display:block;
+    width:100%;
+    padding-top:30%;
+  }
+
+  /* //frog shadow */
+  &:after{ 
+    content:'';
+    display:block;
+    height:50%;
+    width:100%;
+    position:absolute;
+    top:100%;
+    z-index:-3;
+    background: var(--color-bg);
+    border-bottom-right-radius: 50% 100%;
+    border-bottom-left-radius: 50% 100%;
+  }
+}
+
+.body{
+  --body-rotation: calc( var(--pos-x-from-center) * 5deg) ;
+  width:40%;
+  height:100%;
+  position:absolute;
+  bottom:-5%;
+  left: 50%;  
+  background:
+    linear-gradient(var(--color-shadow), var(--color-shadow)),
+    linear-gradient(var(--color-shadow), var(--color-shadow)),   
+    var(--color-skin-belly)
+    ;
+  transform: translateX(-50%) rotate( var(--body-rotation) );
+  border-bottom-left-radius: 50% 200%;  
+  border-bottom-right-radius: 50% 200%;
+  animation: infinite body-breathing 2000ms ease; 
+}
+
+.leg{
+  width: 15%;
+  height: 150%;
+  position:absolute;
+  border-radius: 100% 100% 0 0;
+  z-index:-1;
+  bottom:0;  
+  background: var(--color-skin-dark) linear-gradient( var(--leg-bg-direction), transparent, transparent 80%, var(--color-shadow) 80%);  
+}
+
+.leg.left{
+  --leg-bg-direction: to left;
+  left:40%;  
+  transform: rotate( calc( ( ( var(--pos-x-from-center) * 15 ) - 70) * 1deg ) );  
+  transform-origin:bottom left; 
+}
+
+.leg.right{
+  --leg-bg-direction: to right;  
+  right:40%;
+  transform: rotate(70deg); 
+  transform: rotate( calc( ( ( var(--pos-x-from-center) * 15 ) + 70) * 1deg ) );    
+  transform-origin:bottom right;  
+}
+
+.foot{
+  position: absolute;
+  inset: var(--foot-inset);
+  height: 110%;
+  width: 40%;  
+  
+  /* //toe */
+  &:after{
+    content:'';
+    display:block;
+    position:absolute;
+    background: var(--color-skin-dark);
+    width:100%;
+    padding-top:100%;
+    border-radius:100%;
+  }
+}
+
+.left .foot{
+  --foot-rotation: rotate( calc( ( ( var(--pos-x-from-center) * 15 ) + 20) * -1deg ) );
+  --foot-translation: translateY( calc( var(--pos-x-from-center) * -2% ) );
+  transform-origin:bottom left;  
+  border-top-right-radius: 100% 15%;
+  background: var(--color-skin-dark) linear-gradient(to left, transparent, transparent 80%, var(--color-shadow) 80%); 
+  bottom:0;
+  transform: var(--foot-rotation) var(--foot-translation);
+
+  &:after{
+    right: 50%;
+  }
+}
+
+.right .foot{
+  --foot-rotation: rotate( calc( ( ( var(--pos-x-from-center) * 15 ) - 20) * -1deg ) );
+  --foot-translation: translateY( calc( var(--pos-x-from-center) * 2% ) );  
+  transform-origin:bottom right;
+  border-top-left-radius: 100% 15%;
+  background: var(--color-skin-dark) linear-gradient(to right, transparent, transparent 80%, var(--color-shadow) 80%);  
+  bottom:0;
+  right:0;  
+  transform: var(--foot-rotation) var(--foot-translation);
+
+  &:after{
+    left: 50%;
+  }  
+}
+
+.arm{
+  --elbow-rotation: 0;
+  --offset: 10%;
+  width: 10%;
+  height: 50%;
+  background: var(--color-skin-light);
+  position:absolute;
+  top:75%;
+  background: linear-gradient( var(--arm-gradient-direction), var(--color-skin-light), var(--color-skin-light) 70%, var(--color-skin-medium) 70%);  
+
+  &:before{
+    content:'';
+    display:block;
+    position:absolute;
+    bottom:100%;
+    width:60%;
+    height:170%;
+    background: var(--color-skin-light);
+    transform:rotate(45deg);
+    transform: rotate( var(--elbow-rotation) );
+    border-radius:25% 25% 100% 100%;
+  }  
+}
+
+.left.arm{
+  --arm-rotation: calc( var(--pos-x-from-center) * -10deg);  
+  --arm-gradient-direction: to right;  
+  --elbow-rotation: calc( ( var(--pos-x-from-center) + 60) * 1deg);
+  left: var(--offset);
+  border-radius: 50% 0 0 50%;
+  transform: rotate( var(--arm-rotation) );
+
+
+  &:before{
+    left:0;
+    transform-origin:bottom left;    
+  }
+}
+
+.right.arm{
+  --arm-rotation: calc( var(--pos-x-from-center) * 10deg);    
+  --arm-gradient-direction: to left;  
+  --elbow-rotation: calc( ( var(--pos-x-from-center) + 60) * -1deg);
+  right:var(--offset);
+  border-radius: 0 50% 50% 0;  
+  transform: rotate( var(--arm-rotation) );
+
+  &:before{
+    right:0;
+    transform-origin:bottom right;    
+  }
+}
+
+.hand{
+  width:100%;;
+  padding-top:100%;
+  background:var(--color-feet);
+  position:absolute;
+  top:50%;
+  transform: var(--hand-rotation);
+  z-index:-2;
+}
+
+.left .hand{
+  --hand-rotation: rotate( calc( (var(--pos-x-from-center) + 10)  * -2deg) );
+  right:0;
+  border-radius: 100% 0 0 0;
+  transform-origin: top right;
+}
+
+.right .hand{
+  --hand-rotation: rotate( calc( (var(--pos-x-from-center) - 10)  * -2deg) ) ; 
+  left:0;
+  border-radius: 0 100% 0 0;
+  transform-origin: top left;
+}
+
+.finger{
+  height:200%;
+  width:40%;
+  background:var(--color-feet);
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-20%;
+  transform-origin: top center;
+
+  &:after{
+    content:'';
+    display:block;
+    width:150%;
+    padding-top:150%;
+    background:var(--color-feet);
+    position:absolute;
+    top:100%;
+    left:50%;
+    border-radius:100%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 -.5vw 0 .25vw var(--color-shadow);
+  }
+
+  &:first-child{
+    height:150%;
+    transform: rotate(30deg);
+  }
+
+  &:last-child{
+    height:150%;    
+    transform: rotate(-30deg);
+  }  
+
+}
+
+.head{
+  --head-translation: calc( var(--pos-y-from-center) * -10%);
+  width:40%;
+  padding-top:20%;
+  color:  var(--color-skin-light);
+  background: var(--color-skin-medium);
+  border-radius: 25% 25% 0 0;
+  position:absolute;
+  left:50%;
+  bottom:50%;
+  transform: 
+    translateX(-50%) 
+    translateY( var(--head-translation) ) 
+    rotate( calc( var(--pos-x-from-center) * 10deg) 
+    );
+
+  /* //lower lip */
+  &:before{
+    content:'';
+    display:block;
+    width:120%;
+    height:75%;
+    background:
+      linear-gradient(var(--color-shadow),var(--color-shadow)),
+      var(--color-skin-belly)
+      ;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, 0%);
+    border-radius: 100% 100% 30% 30%;
+    border-bottom-left-radius: 100% 100%;
+    border-bottom-right-radius: 100% 100%;
+    animation: infinite lower-lip-breathing 2000ms ease-in-out;
+  }  
+
+  /* //upper lip */
+  &:after{
+    content:'';
+    display:block;
+    width:150%;
+    height:60%;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+    border-radius: 20%/50%;
+    border-bottom-left-radius: 25% 50%;
+    border-bottom-right-radius: 25% 50%;
+    box-shadow: inset 0 -.5vw 0 .25vw var(--color-skin-belly);    
+    background:
+      no-repeat bottom 30% left 45% / 6% 30% radial-gradient( var(--color-skin-medium), var(--color-skin-medium) 50%, transparent 50%),
+      no-repeat bottom 30% right 45% / 6% 30% radial-gradient( var(--color-skin-medium), var(--color-skin-medium) 50%, transparent 50%),
+      var(--color-skin-light)
+      ;
+  }
+}
+
+.eyes{
+  width:140%;
+  position:absolute;
+  left:50%;
+  bottom:40%;
+  transform: translateX(-50%);
+  display:flex;
+  justify-content:space-between;
+  z-index:1;
+}
+
+.eye{
+  width:30%;
+  border-radius:100%;
+  position:relative;
+  z-index: 2;
+}
+
+.eyelid{
+  content: '';
+  display:block;
+  color: var(--color-skin-light);
+  background: currentColor;
+  position:absolute;
+  top:0;
+  height:100%;
+  width:100%;
+  z-index:-1;  
+
+  &:before{
+    content:'';
+    display:block;
+    position: absolute;
+    width:50%;
+    top:0;
+    padding-top:100%;
+    background:currentColor;
+  }
+}
+
+.left .eyelid {
+  left:50%;
+  border-top-right-radius: 100%;
+
+  &:before{
+    right:100%;
+    border-top-left-radius: 100% 50%;
+    border-bottom-left-radius: 100% 50%;    
+  }
+}
+
+.right .eyelid {
+  right:50%;  
+  border-top-left-radius: 100%;
+
+  &:before{
+    left:100%;
+    border-top-right-radius: 100% 50%;
+    border-bottom-right-radius: 100% 50%;
+  }
+}
+
+.eyeball{
+  width:100%;
+  background: var(--color-skin-light);
+  border-radius:100%;
+  position:relative;
+  padding-top:100%;
+  overflow:hidden;
+  z-index:1;  
+  animation: infinite blink 6000ms ease-out;
+
+  &:before{
+    content:'';
+    display:block;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    bottom: 5%;
+    left: 5%;
+    border-radius:100%;
+    background: no-repeat radial-gradient(var(--color-eyeball), var(--color-eyeball) 62%, var(--color-dark) 62%);
+    box-shadow: inset -.5vw -.5vw 0 .5vw var(--color-shadow);
+    z-index:-1;      
+    overflow:hidden;
+
+  }  
+}
+
+.pupil{  
+  --pupil-pos-x: calc( clamp( 20, calc( var(--pos-x) * 100), 80) * 1% );
+  --pupil-pos-y: calc( clamp( 40, calc( var(--pos-y) * 100), 60) * 1% );
+  display:block;
+  width:40%;
+  height:40%;
+  background:var(--color-dark);  
+  border-top-left-radius:100%;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top: var(--pupil-pos-y);
+  left: var(--pupil-pos-x);    
+  transform: translate(-50%, -50%) rotate(-45deg) scale( var(--scale-x) );
+  z-index:1;  
+
+  /* //pupil highlight */
+  &:before{
+    content:'';
+    display:block;
+    position: absolute;
+    width:50%;
+    height:50%;
+    top:10%;
+    left:80%;
+    background: rgba(255,255,255,.5);
+    border-radius:100%;
+  }  
+
+}
+
+/* //animations */
+
+@keyframes blink{
+  0%, 94%{
+    transform: rotateX(0);    
+  }
+  98%{
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes lower-lip-breathing{
+  0%,100%{
+    transform: translate(-50%, 0);
+  }
+  35%, 65%{
+    transform: translate(-50%, 5%);      
+  }
+}
+
+@keyframes body-breathing{
+  0%,100%{
+    transform: translate(-50%, 0) scale(1) rotate( var(--body-rotation) );
+  }
+  35%, 65%{
+    transform: translate(-50%, 0%) scale(1.05, 1) rotate( var(--body-rotation) );      
+  }
+} 
+
+/* // transition nicer on touch devices */
+
+@media (pointer: coarse) {
+  .pupil, .leg, .foot, .arm, .arm:before, .hand, .body, .head{
+    transition:all 500ms ease;
+  }
+}  

@@ -1,85 +1,251 @@
+/* use this for your logo of your name */
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 /*********************************************
  *        CSS for All Pages   *
  *********************************************/
 /* Accessible Tinkerbell-Inspired Colors */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 :root {
-    --accessible-green: #4caf50;  /* Darker, accessible green              */
-    --sparkle-gold: #ffcc00; /* High-contrast yellow                 */
-    --accessible-pink: #e87aa3;   /* Darker pink for readability         */
-    --accessible-blue: #42a5f5;   /* Accessible light blue              */
-    --background-color: #f6ebeb;  /* Neutral, high-contrast background */
-    --text-color: #212121;        /* Dark text for better readability */
-    --white: #ffff;               /* white                           */
-    --light-green: #ebf6ef;       /* Light Green  */
-    --box-shadow-green: 122, 50%, 50%;     /* Box shadow color */
-  }
+  --accessible-green: #4caf50;       /* Light Mode green */
+  --sparkle-gold: #ffcc00;
+  --accessible-pink: #f2cdda;        /* Light pink */  /* previously: e87aa3  */
+  --accessible-blue: #3c44de;        /* Light blue */
+  --background-color: #edf6eb;       /* Light background */
+  --text-color: #212121;             /* Light text */
+  --white: #ffffff;
+  --light-green: #ebf6ef;
+ 
+  --border-blue: 0 4px 8px rgba(0, 102, 204, 0.3);
+  --border-white: 0 4px 8px rgba(255, 255, 255, 0.2);
+
+  
+
+  /* Optional - darker theme references */
+  --accessible-purple: #845EC2;
+  --deep-purple: #2A1835;
+  --lavender: #D5C4E0;
+  --violet: #5E548E;
+  --slate-blue: #7d8fbe;
+}
+
   
   /* Basic Styling */
   body {
     font-family: 'Arial', sans-serif;
+    font-size: 18px;
+
     overflow:auto;
-    background-color: var(--accessible-pink);
+    background-color: var(--white);
     color: var(--text-color);
     margin: 5em;
     padding-top: 0;
     line-height: 1.6;
     
   }
-  
-  main{
+
+  main { 
+    
     background-color: var(--background-color);
-    border-radius: .7em;  
-    padding: 4em; 
-   }
+    border-radius: .7em; 
+    border-color: var(--accessible-pink);
+    /* max-width: 100%; */
+    margin: 8em 8em 8em ;
+    
 
-/* Navigation */
-nav {
-  position: sticky;      
-  top: 0;              
-  width: 100%;          
-  background-color: var(--background-color); 
-  z-index: 1000;        
-  display: flex;       
-  justify-content: center; /* Or space-between / flex-start if you want alignment */
-  gap: 2em;             
-  padding: 1em 2em;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a shadow */
-  border-style:double;
-  border-color: var(--accessible-green);
+    padding: 1em 1.5em;
+    box-sizing: border-box;
+
 }
 
-nav a {
-  color: var(--accessible-pink);
-  position: relative;
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding: 5px 0;
-  overflow: hidden;
-  z-index: 1;
-  transition: color 0.3s ease-in-out; /* Smooth text color transition */
+.skills{
+  display:flex;
+
+}
+.skillset img{
+  width: 80px;
+  padding: 5px;
+  justify-content: center;
+  background-color: var(--white);
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
+header{
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--accessible-green);
-  z-index: -1;
-  transition: height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  right: 0;
+  
+
+  background-color: var(--accessible-pink);
+  border-radius: 0 0 .5em .5em;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+  padding: 0.5em 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  
+  z-index: 1001;
+
 }
 
-nav a:hover {
-  color: white; /* Text color changes here */
+  header img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+ }
+
+ header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+ 
+ .header-left{
+   display:flex;
+   align-items: center;
+
+   width:100%;
+  
+   padding:2rem;
+ }
+
+
+ .logo{
+
+  height: auto;
+  border-radius: 50%;
+
+  padding: 2em;
+  background-color: hsla(var(--box-shadow-green), 0.3);
+ }
+ 
+ #profile{
+  align-items: left;
+  width:190px;
+ }
+ .profile-pic{
+    width: 60px;
+  height: 60px;
+  border-radius: 50%;
+ 
+ }
+/* to do : make image smaller this dosen't seem to be working */
+ .image-flip {
+  position: relative;
+  width: 20px; /* Set your desired width */
+  height: 20px; /* Set your desired height */
+  perspective: 100px;
 }
 
-nav a:hover::after {
-  height: 100%;
-  background-color: var(--accessible-green); /* You can change this if you want the background to be different */
+.image-flip img {
+  position: absolute;
+
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  border-radius: 12px;
 }
 
+/* Front image shows normally */
+.image-flip .front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* Back image is hidden initially */
+.image-flip .back {
+  transform: rotateY(180deg);
+}
+
+/* On hover, flip both images */
+.image-flip:hover .front {
+  transform: rotateY(180deg);
+}
+
+.image-flip:hover .back {
+  transform: rotateY(0deg);
+  z-index: 3;
+}
+
+ul li{
+  list-style: none;
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: var(--white);
+  border-radius: .5em;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover{
+  transform: scale(1.02); 
+  box-shadow: hsla(var(--box-shadow-green), 0.3);/* Add a shadow effect */
+}
+
+  /* Navigation */
+nav {
+ border-radius: .5em;
+
+  z-index: 1000;
+
+  background-color: var(--background-color); 
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+
+  }
+
+  nav a {
+    color: var(--accessible-pink);
+
+    position: relative;
+
+    text-decoration: none;
+     font-size: 1rem;
+    padding: 0.3em 0.7em;
+    /* overflow: hidden; */
+
+    transition: color 0.3s ease-in-out; /* Smooth text color transition */
+    
+    z-index: 1;
+  }
+  
+  nav ul li{
+    width:auto;
+
+  }
+
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accessible-green);
+    z-index: -1;
+    transition: height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  nav a{
+    padding:1em;
+    text-align: center;
+    border-radius: .5em;
+    justify-content:center;
+  }
+  nav a:hover::after {  
+    color: white; /* Text color changes here */
+    height: 100%;
+    
+    background-color: var(--accessible-green); /* You can change this if you want the background to be different */
+  }
+ .active{
+    background-color: var(--accessible-green);
+    font-weight: bold;
+    color:var(--white);
+     border-radius: .5em;
+  }
 
   h1, h2, h3 {
     color: var(--sparkle-gold);
@@ -88,7 +254,6 @@ nav a:hover::after {
   a {
     color: var(--accessible-pink);
     text-decoration: none;
-    
     
   }
 
@@ -109,61 +274,61 @@ nav a:hover::after {
     border-radius: 5px;
     /* cursor: pointer; */
   }
-  
+
+  button:focus {
+  outline: 2px solid var(--accessible-blue);
+  outline-offset: 2px;
+}
+
   button:hover {
     background-color: var(--accessible-pink);
     /* transform: scale(1.05); */
   }
-  
- /* header */
- header{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- 
-  justify-content: center;  
-   border-radius: .7em;  
-   padding: 1em;
-   background-color: var(--background-color);
-   display: flex;            
-   align-items: center;       
-   gap: 8em;                 
-   text-align: left;     
-   margin-bottom: 2em;       
- 
-  }
- header img{
-   width: 100px;
-   border-radius: 100px;
-   grid-template-columns: 2fr 2fr;
- }
- 
- /* Links */
- footer a {
-   color: var(--white);
-   text-decoration: underline;
-   
- }
- 
- footer a:header {
-   color: var(--accessible-blue);
- }
 
  /* Headings and Section Titles */
  h1, h2, h3 {
    color: var(--accessible-green);
- }
- 
- /* Ensuring text visibility */
- h1, h2, h3 {
    font-weight: bold;
  }
+ .skills{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
 
- /* Sparkle Cursor Effect */
+.skillset{
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    width:fit-content;
+    height:fit-content;
+    margin:3px;
+
+}
+
+ footer{
+  background-color: var(--accessible-pink);
+   color: var(--white);
+    text-align: center;
+   width:100%;
+
+   padding: 3em 0rem;
+   
+ }
+
+ footer a {
+   color: var(--white);
+   text-decoration: underline;
+ }
+
+ footer hr{
+    border: 1px solid var(--white);
+    margin: 2rem 0;
+ }
 
 
  /*********************************************
- *             Index  Webpage                 *
+ *           Sparkle Cursor Effect            *
  *********************************************/
 /* Cursor effect */
 #sparkles-container {
@@ -237,7 +402,7 @@ nav a:hover::after {
     -webkit-appearance: none;
     width: 50px;
     height: 25px;
-    background-color: #ccc;
+    background-color: #ccc;                          
     border-radius: 25px;
     position: relative;
     cursor: pointer;
@@ -268,18 +433,8 @@ nav a:hover::after {
     font-size: 16px;
 }
 
-/*=Hover effects For project Images in index  */
-/* .project-screenshot{
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}*/
-
-/*.project-screenshot:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 4px 15px rgba(var(--accessible-blue)0, 0, 0, 0.2); /* Add a shadow effect 
-} */
 
 /*  this applies to the images in index.html section titled "project"*/
-
 .project-image{
   transition: transform 0.2s ease, box-shadow 0.3s ease;
   width: 100%;
@@ -288,7 +443,7 @@ nav a:hover::after {
 
 .project-image:hover{
   transform: scale(1.08); 
-  box-shadow: 0 8px 20px hsla(var(--box-shadow-green), 0.3);/* Add a shadow effect */
+  box-shadow: hsla(var(--box-shadow-green), 0.3);/* Add a shadow effect */
 }
 
 /* Private-Policy.html */
@@ -297,12 +452,44 @@ nav a:hover::after {
   border-radius: .5em;
 }
 
-/*********************************************
- *         about-cayleigh.html               *
- *********************************************/
  .timeline {
+
+  display:flex;
+  flex-direction: column;
+
   list-style-type: none;
-  padding: 0;
+  
+  gap:1.8rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: auto  1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5em;
+}
+.year{
+grid-column: 1/-1;
+  font-size: 1.5em;
+  color: var(--accessible-blue);
+  font-weight: bold;
+  padding-right: 1em;
+  text-align: right;
+}
+.description{
+  font-size: 1.2em;
+  color: var(--accessible-blue);
+  flex-grow:1;
+  padding-left: 1em;
+  line-height: 1.4;
+  margin-bottom: .5em;
+}
+.line{
+  height:9rem;
+  width:.3rem;
+  background-color: var(--accessible-green);
+  flex-grow: 1;
+
 }
 .timeline h3 {
   margin-top: 1.5em;
@@ -312,3 +499,192 @@ nav a:hover::after {
 .timeline ul {
   margin-left: 1em;
 }
+
+.timeline section {
+  border-left: 4px solid var(--accessible-green);
+  padding-left: 1em;
+  margin-bottom: 1.5em;
+}
+
+
+/* Project Grid Layout */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Individual project styling */
+.project-screenshot {
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.project-screenshot figcaption {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.project-screenshot p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+
+
+/*********************************************
+ *         site-plan.html               *
+ *********************************************/
+ 
+/* Card-style sections inside main */
+.card {
+    background-color: var(--white); /* keeps card white for consistent readability */
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table of colors */
+table.colors {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.colors th,
+table.colors td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+/* Hover effect for color scheme table cells */
+table.colors td:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.accessible-green { background-color: #4caf50; color: white; }
+.sparkle-gold { background-color: #ffcc00; }
+.accessible-pink { background-color: #e87aa3; color: white; }
+.accessible-blue { background-color: #3c44de; color: white; }
+.background-color { background-color: #f6ebeb; }
+.text-color { background-color: #212121; color: white; }
+.white { background-color: #ffffff; }
+.light-green { background-color: #ebf6ef; }
+
+
+
+
+
+/* __________________ */
+.image-text-pair {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.image-text-pair img {
+  width: 200px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.image-text-pair.reverse {
+  flex-direction: row-reverse;
+}
+.zig-zag {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.zigzag-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.zigzag-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.zigzag-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.zigzag-text h2 {
+  margin-bottom: 0.5rem;
+}
+
+.zigzag-image {
+  flex: 1;
+  max-width: 350px;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-flip {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.image-flip img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.6s ease;
+}
+
+.image-flip .front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.image-flip .back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* Flip effect on hover */
+.image-flip:hover .front {
+  transform: rotateY(-180deg);
+}
+
+.image-flip:hover .back {
+  transform: rotateY(0deg);
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+
+}
+
+
