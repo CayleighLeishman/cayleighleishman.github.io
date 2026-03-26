@@ -1,7 +1,8 @@
-/**
+/* ======================================================
  * DESIGN SYSTEM VARIABLES
  * Centralized control for colors and sizing.
- */
+  =======================================================
+*/
 :root {
     --brand-green: #4caf50;
     --brand-pink: #e87aa3;
@@ -17,7 +18,9 @@
     --img-desktop: 250px; 
 }
 
-/* --- GLOBAL RESET --- */
+/* ==============
+   GLOBAL RESET 
+================= */
 * { box-sizing: border-box; }
 
 body {
@@ -27,7 +30,7 @@ body {
     padding: 0;
     color: var(--text-main);
     line-height: 1.5;
-    overflow-x: hidden; /* Prevents side-scrolling on tiny screens */
+    overflow-x: hidden;
 }
 
 .container {
@@ -36,23 +39,68 @@ body {
     padding: 0 15px;
 }
 
-/* --- HEADER MODULE --- */
+/* ==============
+   HEADER MODULE 
+================= */
 .blog-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     text-align: center;
-    padding: clamp(20px, 10vh, -2vh) 15px;
+    padding: 1rem 15px;
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow);
 }
 
 .blog-header h1 {
     color: var(--brand-blue);
-    font-size: clamp(1.2rem, 8vw, 2.2rem); /* Scales from Watch to Desktop */
-    margin: 0;
+    font-size: clamp(1.1rem, 5vw, 1.8rem); 
+    margin: 0 0 5px 0;
 }
 
-/* --- THE BLOG CARD --- 
-   This is the main function that keeps Image Left and Text Right.
-*/
+.blog-header p {
+    margin: 0 0 15px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===================
+   NAVIGATION MODULE 
+====================== */
+.blog-header nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.blog-header nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.blog-header nav a:hover {
+    background-color: var(--bg-page);
+    color: var(--brand-pink);
+    transform: translateY(-2px);
+}
+
+.blog-header nav a.active {
+    background-color: var(--brand-blue);
+    color: white;
+}
+
+/* ================
+   THE BLOG CARD 
+=================== */
 .blog-card {
     display: flex;
     background: var(--bg-card);
@@ -63,7 +111,9 @@ body {
     cursor: pointer;
 }
 
-/* --- IMAGE FLIP FUNCTION --- */
+/* =====================
+   IMAGE FLIP FUNCTION 
+======================== */
 .card-image-container {
     flex: 0 0 var(--img-desktop);
     height: var(--img-desktop);
@@ -78,7 +128,6 @@ body {
     transform-style: preserve-3d;
 }
 
-/* Flip trigger on Hover (Desktop) and Tap (Mobile) */
 .blog-card:hover .image-flip-inner {
     transform: rotateY(180deg);
 }
@@ -93,7 +142,9 @@ body {
 
 .flip-back { transform: rotateY(180deg); }
 
-/* --- CONTENT MODULE --- */
+/* ================
+   CONTENT MODULE 
+=================== */
 .card-content {
     padding: clamp(15px, 5vw, 30px);
     flex: 1;
@@ -115,10 +166,11 @@ h2 {
     color: var(--brand-blue); 
 }
 
-/* --- SKILLS GRID --- */
+/* =============
+   SKILLS GRID 
+================ */
 .skills-mini-grid {
     display: grid;
-    /* Automatically creates as many columns as fit (min 80px each) */
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 10px;
     margin-top: 15px;
@@ -135,30 +187,27 @@ h2 {
 
 .skill-item img { width: 18px; height: 18px; }
 
-/* --- RESPONSIVE ADAPTATION --- */
-
-/* Mobile Breakpoint (650px) - Stacks the Image on top of Text */
+/* ======================
+   RESPONSIVE ADAPTATION 
+========================= */
 @media (max-width: 650px) {
-    .blog-card {
-        flex-direction: column;
-    }
+    .blog-card { flex-direction: column; }
     .card-image-container {
         width: 100%;
-        height: 200px; /* Rectangular on mobile to save vertical space */
+        height: 200px;
     }
 }
 
-/* Smartwatch / Micro-Screen Breakpoint (300px) */
 @media (max-width: 300px) {
     .container { padding: 0 5px; }
     .card-content { padding: 10px; }
     .card-image-container { height: 140px; }
-    .skills-mini-grid { grid-template-columns: 1fr 1fr; } /* Force 2 columns */
+    .skills-mini-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* --- FOOTER MODULE --- 
-   This function anchors the bottom of the page and scales for all devices.
-*/
+/* ==============
+   FOOTER MODULE 
+================= */
 .blog-footer {
     background: var(--bg-card);
     border-top: 1px solid var(--border-light);
@@ -168,7 +217,7 @@ h2 {
 }
 
 .footer-container {
-    max-width: var(--container-max);
+    max-width: 850px;
     margin: 0 auto;
     text-align: center;
 }
@@ -179,7 +228,6 @@ h2 {
     font-size: 1.2rem;
 }
 
-/* --- NAVIGATION LINKS --- */
 .footer-links {
     display: flex;
     justify-content: center;
@@ -195,11 +243,8 @@ h2 {
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: var(--brand-pink);
-}
+.footer-links a:hover { color: var(--brand-pink); }
 
-/* --- BOTTOM CREDITS --- */
 .footer-bottom {
     font-size: 0.8rem;
     border-top: 1px solid var(--border-light);
@@ -209,7 +254,6 @@ h2 {
     gap: 10px;
 }
 
-/* "Available" Pulse Light */
 .status-dot {
     height: 8px;
     width: 8px;
@@ -220,18 +264,8 @@ h2 {
     box-shadow: 0 0 5px var(--brand-green);
 }
 
-/* --- MICRO-SCREEN (WATCH) FLEXIBILITY --- */
 @media (max-width: 350px) {
-    .footer-links {
-        flex-direction: column; /* Stacks links so they are easy to tap on a watch */
-        gap: 10px;
-    }
-    
-    .blog-footer {
-        padding: 20px 10px;
-    }
-    
-    .footer-section h3 {
-        font-size: 1rem;
-    }
+    .footer-links { flex-direction: column; gap: 10px; }
+    .blog-footer { padding: 20px 10px; }
+    .footer-section h3 { font-size: 1rem; }
 }

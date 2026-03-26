@@ -1,87 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Personal project showcasing ideas and creations" />
-    <meta name="author" content="Cayleigh Marie" />
-    <meta name="keywords" content="Cayleigh Marie, personal projects, web development, coding, tutorials" />
-
-    <title>Contact Cayleigh Leishman</title>
-
-    <!-- CSS Styles -->
-    <link rel="stylesheet" href="../styles/base.css" />
-    <link rel="stylesheet" href="../styles/small.css" />
-
-    <!-- JavaScript -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Cayleigh Leishman</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="scripts/sparkleCursor.js" defer></script>
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" />
-
-    
 </head>
 <body>
-    <!-- https://www.youtube.com/watch?v=r4RQ38EoLds -->
-    <header>
-      
-      
-        <img src="../images/profile.svg" alt="Cayleigh Leishman Profile Picture" />
-        <h1>Cayleigh Leishman</h1>
 
-        
-          <nav>
-            <a href="../cayleighl.html" aria-label="Home">Home</a>
-            <a href="../fun/scavengerhunt.html"aria-label="Navigate to Scavenger Hunt">Scavenger Hunt</a>
-            <a href="siteplan.html" aria-label="Navigate to Site Plan">Site Plan</a>
-            <a class="active" href="contact.html" aria-label="Navigate to Contact">Contact</a>
-        </nav>  
-        <button title="navigation" id="hamburger-button"></button>
+<header class="blog-header">
+    <h1>Cayleigh Leishman</h1>
+    <p>Systems • Organization • User Support</p>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="../fun/scavengerhunt.html">Scavenger Hunt</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
 
-        <div class="dark-mode-toggle">
-  <label for="darkModeSwitch">🌙 Dark Mode</label>
-  <input type="checkbox" id="darkModeSwitch" />
-</div>
-    </header>
+<main class="container">
+    <!-- To Do: Later try to get the sparkles working on your css to all the pages ideally. -->
+    <!-- <div class="switch-container" style="text-align: right; margin-bottom: 10px;">
+        <label for="sparkleToggle">✨ Enable Sparkles</label>
+        <input type="checkbox" id="sparkleToggle" checked>
+    </div> -->
 
-    <main> 
-           <div class="switch-container">
-            <label for="sparkleToggle" id="toggle-label">✨ Enable Sparkles</label>
-            <input type="checkbox" id="sparkleToggle" class="switch" checked>
-            <span class="slider"></span>
+    <article class="blog-card">
+        <div class="card-image-container">
+            <div class="image-flip-inner">
+                <img src="../images/profile.svg" class="flip-front" alt="Profile">
+                <img src="../images/profile-hover.jpg" class="flip-back" alt="Profile Support">
+            </div>
         </div>
+        <div class="card-content">
+            <span class="tag">Get In Touch</span>
+            <h2>Send a Message</h2>
+            <form action="https://formsubmit.co/cayleigh.leishman@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; border: 1px solid var(--border-light); border-radius: 4px;">
+                <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; border: 1px solid var(--border-light); border-radius: 4px;">
+                <textarea name="message" placeholder="How can I help?" rows="4" style="padding: 10px; border: 1px solid var(--border-light); border-radius: 4px;"></textarea>
+                <button type="submit" style="background: var(--brand-blue); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 600;">Send Message</button>
+            </form>
+        </div>
+    </article>
+</main>
 
-        <form action="https://formsubmit.co/cayleigh.leishman@gmail.com" method="POST">
-             <input type="text" name="name" required>
-             <input type="email" name="email" required>
-             <button type="submit">Send</button>
-        </form>
- 
-    </main>
+<footer class="blog-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Cayleigh Leishman</h3>
+            <p>&copy; 2026 • Professional Coordination & Engineering</p>
+        </div>
+        <div class="footer-links">
+            <a href="mailto:cayleigh.leishman@gmail.com">Email</a>
+            <a href="https://linkedin.com/in/cayleigh-leishman">LinkedIn</a>
+            <a href="https://github.com/cayleighleishman">GitHub</a>
+        </div>
+    </div>
+</footer>
 
-    <!-- these next few allow my page to have the animatin of the fish bow! Got from lottiefiles -->
-        <script
-          src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js"
-          type="module"
-        ></script>
-
-        <dotlottie-wc
-          src="https://lottie.host/ebb22708-ce3d-44e0-92cd-67c754845e39/0v4i9T6bAE.lottie"
-          autoplay
-          loop aria-label="fish jumping out of a fishbowl animation"
-          lazyloading>
-        </dotlottie-wc>
-    <footer>
-        <p>&copy; 2025 Cayleigh Leishman. All rights reserved.</p>
-        <p>
-            Follow me on:
-            <a href="https://www.linkedin.com/in/cayleigh-leishman" target="_blank" rel="noopener noreferrer">LinkedIn</a> or
-            <a href="https://github.com/CayleighLeishman" target="_blank" rel="noopener noreferrer">GitHub</a>.
-            
-        </p>      
-        
-    </footer>
-    
 </body>
 </html>

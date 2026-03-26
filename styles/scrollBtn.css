@@ -1,0 +1,36 @@
+
+:root{
+ --accent: #29323c; 
+}
+
+
+/* ======================================================
+   Scroll to Top Button
+========================================================= */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1001;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-2px);
+  background: #4158d0; /* Slightly lighter accent on hover */
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}

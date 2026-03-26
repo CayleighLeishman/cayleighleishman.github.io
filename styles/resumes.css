@@ -1,0 +1,194 @@
+/* ===========================
+  Resume Page Styles (Synced with base.css Design System)
+  Author: Cayleigh Leishman
+ ===========================
+  */
+
+:root {
+    --maxw: 940px;
+    --radius: 12px;
+}
+
+/* ========================
+   LAYOUT & BODY 
+=========================== */
+.resume-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-page);
+}
+
+.resume-body .blog-header {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.resume {
+    width: 100%;
+    max-width: var(--maxw);
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+    margin: 0 15px 60px 15px;
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 30px;
+}
+
+/* ========================
+   RESUME HEADER SECTION 
+=========================== */
+.resume header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 86px;
+    height: 86px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-green) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; 
+    font-weight: 700;
+    font-size: 28px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15); 
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.resume h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: var(--brand-blue);
+    line-height: 1.1;
+}
+
+.tagline {
+    margin: 8px 0 15px 0;
+    color: var(--brand-pink);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* ========================
+   MAIN CONTENT & SIDEBAR 
+=========================== */
+.resume h2 {
+    font-size: 0.9rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--brand-blue);
+    margin: 30px 0 15px 0;
+    border-bottom: 2px solid var(--bg-page);
+    padding-bottom: 8px;
+}
+
+.main { padding-right: 20px; }
+.side { padding-left: 10px; }
+
+/* ========================
+   PROJECT CARDS 
+=========================== */
+.project {
+    background: var(--bg-page);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--brand-green);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.project strong { color: var(--brand-blue); }
+.project a { text-decoration: none; color: inherit; }
+
+/* ========================
+   SKILLS & CONTACT LINKS 
+=========================== */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill {
+    background: white;
+    color: var(--text-main);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.meta a {
+    text-decoration: none;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--brand-blue), var(--brand-green), var(--brand-blue));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--brand-blue);
+    transition: color 0.3s ease, background-position 0.5s ease;
+}
+
+.meta a:hover {
+    color: transparent;
+    background-position: right center;
+}
+
+/* ========================
+          BUTTONS 
+=========================== */
+.resume button {
+    background: var(--brand-blue);
+    color: white;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.resume button:hover {
+    background: var(--brand-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(232, 122, 163, 0.3);
+}
+
+/* ========================
+   RESPONSIVE & PRINT 
+=========================== */
+@media (max-width: 880px) {
+    .resume { grid-template-columns: 1fr; padding: 25px; }
+    .resume header { flex-direction: column; text-align: center; }
+    .main, .side { padding: 0; }
+}
+
+@media print {
+    .blog-header, button, #scrollTopBtn { display: none !important; }
+    body { background: white; }
+    .resume { box-shadow: none; border: none; max-width: 100%; margin: 0; padding: 0; }
+}
