@@ -1,148 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <meta name="description" content="Personal project showcasing ideas and creations" />
-    <meta name="author" content="Cayleigh Marie" />
-    <meta name="keywords" content="Cayleigh Marie, personal projects, web development, coding, tutorials" />
-
-    <title>About Cayleigh Leishman</title>
-
-    <!-- CSS Styles -->
-    <link rel="stylesheet" href="styles/base.css" />
-    <link rel="stylesheet" href="styles/medium.css" />
-    <link rel="stylesheet" href="styles/small.css" />
-
-    <!-- JavaScript -->
-    <script src="scripts/sparkleCursor.js" defer></script>
-    <script src="scripts/hamburger.js" defer></script>
-    <!-- <script src="scripts/darkMode.js" defer></script> -->
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon/favicon.ico" />
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cayleigh Leishman | Professional Engineering Blog</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-      
-      
-        <img src="images/profile.svg" alt="Cayleigh Leishman Profile Picture" />
-        <h1>Cayleigh Leishman</h1>
 
-        <!-- navigation here: -->       
-         <nav>
-              
-                <li><a class="active" href="cayleighl.html" aria-label="Home">Home</a></li>
-                <li><a href="fun/scavengerhunt.html" aria-label="Navigate to Scavenger Hunt">Scavenger Hunt</a></li>
-                <!-- <li><a href="fun/journalentries/intro.html" aria-label="Navigate to Blog posts">Blog entries</a></li> -->
-                <li><a href="business/siteplan.html" aria-label="Navigate to Site Plan">Site Plan</a></li>
-                <li><a href="business/contact.html" aria-label="Navigate to Contact">Contact</a></li>
-            
-            </nav>
-      
+<header class="blog-header">
+    <h1>Cayleigh Leishman</h1>
+    <p>Systems • Organization • User Support</p>
+</header>
 
-        <button title="navigation" id="hamburger-button"></button>
+<main class="container">
+    <article class="blog-card" onclick="">
+        <div class="card-image-container">
+            <div class="image-flip-inner">
+                <img src="images/profile.svg" class="flip-front" alt="Profile Front">
+                <img src="images/profile-hover.jpg" class="flip-back" alt="Profile Back">
+            </div>
+        </div>
+        <div class="card-content">
+            <span class="tag">Engineering</span>
+            <h2>What I Do</h2>
+            <p>I work at the intersection of organization, technology, and user experience—focused on creating clear, reliable, and user-friendly systems while supporting both people and processes.</p>
+        </div>
+    </article>
 
-        <div class="dark-mode-toggle">
-  <label for="darkModeSwitch">🌙 Dark Mode</label>
-  <input type="checkbox" id="darkModeSwitch" />
-</div>
-    </header>
-        
-        
-     
-    <main>
-   <!-- Button to toggle sparkle effect (on/off) -->
-        <div class="switch-container">
-            <label for="sparkleToggle" id="toggle-label">✨ Enable Sparkles</label>
-            <input type="checkbox" id="sparkleToggle" class="switch" checked>
-            <span class="slider"></span>
+    <article class="blog-card" onclick="">
+    <div class="card-image-container">
+        <div class="image-flip-inner">
+            <img src="images/location/pocatello-temple.webp" class="flip-front" alt="Pocatello, Idaho">
+            <img src="images/location/ab-temple.png" class="flip-back" alt="Alberta, Canada">
+        </div>
+    </div>
+    <div class="card-content">
+        <span class="tag">Location</span>
+        <h2>Where I’m From</h2>
+        <p>Based in the Aberdeen, Idaho area, I operate within the Mountain Time Zone and enjoy working in roles that support collaboration, structure, and clear communication.</p>
+    </div>
+</article>
+
+    <article class="blog-card" onclick="">
+        <div class="card-image-container skills-bg">
+            <div class="image-flip-inner">
+                <img src="images/icons8-javascript-128.png" class="flip-front" alt="JS">
+                <img src="images/icons8-svelte-128.png" class="flip-back" alt="Svelte">
+            </div>
+        </div>
+        <div class="card-content">
+            <span class="tag">Toolbox</span>
+            <h2>Technical Expertise</h2>
+            <div class="skills-mini-grid">
+                <div class="skill-item"><img src="images/icons8-html-100.png" alt="HTML"><span>HTML</span></div>
+                <div class="skill-item"><img src="images/icons8-css-96.png" alt="CSS"><span>CSS</span></div>
+                <div class="skill-item"><img src="images/icons8-javascript-128.png" alt="JS"><span>JS</span></div>
+                <div class="skill-item"><img src="images/icons8-react-96.png" alt="React"><span>React</span></div>
+                <div class="skill-item"><img src="images/icons8-svelte-128.png" alt="Svelte"><span>Svelte</span></div>
+                <div class="skill-item"><img src="images/icons8-mysql-80.png" alt="SQL"><span>MySQL</span></div>
+            </div>
+        </div>
+    </article>
+</main>
+<footer class="blog-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Cayleigh Leishman</h3>
+            <p>Organization | User Support | Process Coordination</p>
         </div>
 
-        <h2>What I Do</h2>
-        <p>
-            I’m studying Software Engineering with a focus on web development. I’m especially curious about UI research—how
-            people use websites and how to make them better for everyone.
-        </p>
+        <div class="footer-links">
+            <a href="mailto:cayleighleishman@gmail.com">Email</a>
+            <a href="https://linkedin.com/in/cayleigh-leishman">LinkedIn</a>
+            <a href="https://github.com/cayleighleishman">GitHub</a>
+        </div>
 
-        <section class="image-flip">
-          <img src="images/profile.svg" alt="Cayleigh smiling for a picture" class="front" />
-          <img src="images/profile-hover.jpg" alt="cayleigh Dancing" class="back" />
-        </section>
-        <h2>Skills</h2>
-        <!--  -->
-        <section class="skills">
-            <section class="skillset">
-                <img src="images/icons8-html-100.png" alt="pink logo for HTML">
-                <p>HTML</p>
-            </section>
+        <div class="footer-bottom">
+            <span>&copy; 2026 • Based in Mountain Time</span>
+            <div class="footer-status">
+                <span class="status-dot"></span> Available for Coordination
+            </div>
+        </div>
+    </div>
+</footer>
 
-     <section class="skillset">
-        <p><img src="images/icons8-css-96.png" alt="pink logo for CSS"> CSS</p>
-     </section>   
-        <section class="skillset">
-            <p><img src="images/icons8-javascript-128.png" alt="pink logo for Javascript">Javascript</p>
-        </section>   
-        <section class="skillset">
-            <p><img src="images/icons8-json-80.png" alt="Pink Logo for Json">JSON</p>
-
-        </section>   
-
-        <section class="skillset">
-            <p><img src="images/icons8-react-96.png" alt="pink logo for React">REACT</p>
-        </section> 
-
-        <section class="skillset">
-                        <p><img src="images/icons8-svelte-128.png" alt="pink logo for Svelte">Svelte</p>
-
-        </section>
-        <section class="skillset">
-            <p><img src="images/icons8-c-sharp-logo-100.png" alt="pink logo for CSharp.">C#</p>
-
-        </section>
-
-        <section class="skillset">
-            <p><img src="images/icons8-accessibility-100.png" alt="pink button for accessibility"> Accessibility driven</p>
-
-        </section>
-        <section class="skillset">
-            <p><img src="images/icons8-mysql-80.png" alt="{Pink button for MySQL}">MySQL</p>
-
-        </section> 
-        </section>  <!-- class= skills -->
- 
-
-        <h2>Where I’m From:</h2>
-        <p>
-            With roots in Idaho and Alberta, I now work remotely from the Mountain Time Zone—where the mountains are high and the Wi-Fi (usually) works.
-        </p>
-
-        <section class="image-flip">
-          <img src="images/location/pocatello-temple.webp" alt="Idaho Pocatello Temple" class="front" />
-          <img src="images/location/ab-temple.png" alt="Alberta Lethbridge Temple" class="back" />
-        </section>
-      
-
-
-        <h2>Just For Fun</h2>
-        <ul>
-            <li>Building a closet site that mixes and matches outfits automatically</li>
-            <li>Passionate about crafts, vibrant colors, and brain-teasing puzzles</li>
-        </ul>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Cayleigh Leishman. All rights reserved.</p>
-        <p>
-            Follow me on:
-            <a href="https://www.linkedin.com/in/cayleigh-leishman" target="_blank" rel="noopener noreferrer">LinkedIn</a> or
-            <a href="https://github.com/CayleighLeishman" target="_blank" rel="noopener noreferrer">GitHub</a>.
-            
-        </p>
-    </footer>
 </body>
 </html>
