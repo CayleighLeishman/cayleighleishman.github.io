@@ -39,7 +39,7 @@ body {
 /* --- HEADER MODULE --- */
 .blog-header {
     text-align: center;
-    padding: clamp(20px, 10vh, 60px) 15px;
+    padding: clamp(20px, 10vh, -2vh) 15px;
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-light);
 }
